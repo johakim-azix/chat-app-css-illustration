@@ -20,16 +20,16 @@
    --light-grayish-violet: hsl(270, 20%, 96%); /*app background*/
    --very-dark-desaturated-violet: hsl(271, 36%, 24%); /*submit button background*/
    --very-light-magenta: hsl(289, 100%, 72%); /*radio button outline*/
+   --incomming-msg-backgroud:hsl(276, 70%, 90%);
 
    /* =============== fonts ======================*/
    --font-size : 16px;
    --rgular-font-weight : 400;
    --medium-font-weight : 500;
    --bold-font-weight : 700;
-
    --font-familly : "Rubik";
 
-       /*========== z index ==========*/
+    /*========== z index ==========*/
        --z-tooltip: 10;
        --z-fixed: 100;
        --z-modal: 1000;
@@ -111,7 +111,7 @@ body{
 }
 
 .foreground-scene{
-    z-index: 10;
+    z-index: var(--z-tooltip);
     position: absolute;
     height:100%; 
     width:100%;
@@ -166,6 +166,7 @@ body{
     border-radius: 20px;
     padding:0;
     overflow: hidden;
+    position: relative;
 }
 
 .header{
@@ -275,12 +276,12 @@ body{
     max-width: 55%;
 }
 
-
+/* ============== start message loading annimations ======================= */
 
 .incoming .msg{
-    background-color: hsl(276, 70%, 90%);
+    background-color: var(--incomming-msg-backgroud);
     border-radius: 10px 10px 10px 3px;
-    color: var(--modarate-violet)
+    color: var(--modarate-violet);
 }
 
 
@@ -289,6 +290,103 @@ body{
     border-radius: 10px 10px 3px 10px;
     color: var(--desaturated-dark-violet)
 }
+
+.incoming.placeholder .msg > div{
+    height: 7px;
+    margin: 2px 0;
+    border-radius: 2px;
+    background: rgba(0,0,0,.03);
+    animation: skeleton-msg-text-loader 1s linear infinite alternate;
+}
+
+@keyframes skeleton-msg-text-loader {
+    form{
+        background-color: rgba(0,0,0,.03);
+    }
+    to{
+        background-color: rgba(0,0,0,.1);
+    }
+}
+
+.incoming.placeholder .msg > div:first-child{
+    width:145px;
+}
+
+.incoming.placeholder .msg > div:last-child{
+    width:100px;
+}
+
+.incoming.placeholder > .pricing-item > div{
+    background: rgba(255,255,255,.3);
+    color: transparent;
+    border: 0;
+    animation: skeleton-msg-pricing-loader 1s linear infinite alternate;
+}
+
+.incoming.placeholder > .pricing-item > small{    
+    background: rgba(255,255,255,.3);
+    color: transparent;
+    margin-left: 5px;
+    border-radius: 2px;
+    animation: skeleton-msg-pricing-loader 1s linear infinite alternate;
+}
+
+.incoming.placeholder > .pricing-item > strong{
+    background: rgba(255,255,255,.3);
+    margin-left: 5px;
+    color:transparent;
+    border-radius: 2px;
+    animation: skeleton-msg-pricing-loader 1s linear infinite alternate;
+
+}
+
+@keyframes skeleton-msg-pricing-loader {
+    form{
+        background-color: rgba(255,255,255,.3);
+    }
+    to{
+        background-color: rgba(255,255,255,.7);
+    }
+}
+
+.cover{ /*for out going images */
+    width: 50px; 
+    height : 50px;
+    background: rgba(0,0,0,.45);
+    position: absolute;
+    z-index: 5;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.load-indicator{ /* for out going images */
+    width:20px;
+    height:20px;
+    border-radius: 100%;
+    background:rgba(255,255,255,.3);
+    animation: skeleton-msg-pricing-loader 1s linear infinite alternate;
+
+}
+
+.incoming.placeholder .images .item {
+    background: rgba(0,0,0,.03);
+    animation: skeleton-msg-incoming-img-loader 1s linear infinite alternate;
+}
+
+@keyframes skeleton-msg-incoming-img-loader {
+    form{
+        background-color: rgba(0,0,0,.03);
+    }
+    to{
+        background-color: rgba(0,0,0,.1);
+    }
+}
+
+
+/* ============== end message loading annimations ======================= */
+
+
 
 
 
@@ -362,7 +460,8 @@ body{
     align-items: center;
     align-content: center;
     margin : 5px 5px;
-    border-radius: 10px
+    border-radius: 10px;
+    position: relative;
 }
 
 .images .grid .item img{
@@ -380,6 +479,11 @@ body{
     align-items: center;
     color: rgba(0,0,0,.3);
     box-shadow: 0 1px 6px rgba(0,0,0,.1);
+    
+    /* todo: review this part to simulate the msg typing */
+    position:absolute;
+    bottom:0;
+    /* height:200px */
 }
 
 .new-msg > *{
