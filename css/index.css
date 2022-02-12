@@ -495,9 +495,39 @@ body{
     width: calc(100% - 100px);
     /*align-self: flex-end;*/
     margin: 5px 0;
-    /*height: 50px;*/
+    height: 20px;
+    overflow: hidden;
 }
 
+.msg-field-sentence-item{
+    display: inline-block;
+    /*width: 20px;*/
+    /*border: solid red 1px;*/
+    overflow: hidden;
+    height: 20px;
+    position: relative;
+    color: rgba(0,0,0,.5);
+
+}
+
+.msg-field-sentence-item .mask{
+    position: absolute!important;
+    width: 300px;
+    height: 20px;
+    background: rgba(255,255,255,1);
+    display: block;
+    top: 0;
+}
+
+.typing{
+    left: 0;
+    animation: typing 2s steps(22) forwards ;
+}
+@keyframes typing {
+    100%{
+        left: 100%;
+    }
+}
 
 
 .send-message{
