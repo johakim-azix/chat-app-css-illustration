@@ -8,6 +8,7 @@
     <title>Chat App css illustration</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/font_awsome/css/all.css">
+    <script defer src="/js/index.js"></script>
 </head>
 <body>
     <div class="background-scene">
@@ -41,72 +42,85 @@
                     </div>
                     <div class="queue">
                         
-                        <div class="msg-item incoming placeholder">
-                            <span></span>
-                            <div class="msg">
-                                <div></div>
-                                <div></div>
-                            </div>
-                        </div>
+                        <!-- todo : this is the placeholder for incoming msg text : already taken -->
+<!--                        <div id="view-template"  class="msg-item incoming placeholder">-->
+<!--                            <span></span>-->
+<!--                            <div class="msg">-->
+<!--                                <div></div>-->
+<!--                                <div></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
-                        <div class="msg-item outgoing placeholder">
-                            <span></span>
-                            <div class="images" >
-                                <div class="grid">
-                                    <div class="item">
-                                        <div class="cover">
-                                            <div class="load-indicator"></div>
-                                        </div>
-                                        <img src="images/dog-image-1.jpg" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <div class="cover">
-                                            <div class="load-indicator"></div>
-                                        </div>
-                                        <img src="images/dog-image-2.jpg" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <div class="cover">
-                                            <div class="load-indicator"></div>
-                                        </div>
-                                        <img src="images/dog-image-3.jpg" alt="">
-                                    </div>
-                                </div>
-                              </div>
-                        </div>
+<!--                        <div class="msg-item outgoing placeholder">-->
+<!--                            <span></span>-->
+<!--                            <div class="images" >-->
+<!--                                <div class="grid">-->
+<!--                                    <div class="item">-->
+<!--                                        <div class="cover">-->
+<!--                                            <div class="load-indicator"></div>-->
+<!--                                        </div>-->
+<!--                                        <img src="images/dog-image-1.jpg" alt="">-->
+<!--                                    </div>-->
+<!--                                    <div class="item">-->
+<!--                                        <div class="cover">-->
+<!--                                            <div class="load-indicator"></div>-->
+<!--                                        </div>-->
+<!--                                        <img src="images/dog-image-2.jpg" alt="">-->
+<!--                                    </div>-->
+<!--                                    <div class="item">-->
+<!--                                        <div class="cover">-->
+<!--                                            <div class="load-indicator"></div>-->
+<!--                                        </div>-->
+<!--                                        <img src="images/dog-image-3.jpg" alt="">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                              </div>-->
+<!--                        </div>-->
 
-                        <div class="msg-item incoming placeholder">
-                            <div class="pricing-item">
-                                <div class="radio" style=""></div>
-                                <small>30 minute walk</small>
-                                <strong>$29</strong>
-                            </div>
-                        </div>
-                        
-                        <div class="msg-item incoming placeholder">
-                            <span></span>
-                            <div class="images" >
-                                <div class="grid">
-                                    <div class="item">
-                                        
-                                    </div>
-                                    <div class="item">
-                                        
-                                    </div>
-                                    <div class="item">
-                                        
-                                    </div>
-                                    
-                                </div>
-                              </div>
-                        </div>
+<!--                        <div class="msg-item incoming placeholder">-->
+<!--                            <div class="pricing-item">-->
+<!--                                <div class="radio" style=""></div>-->
+<!--                                <small>30 minute walk</small>-->
+<!--                                <strong>$29</strong>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        -->
+<!--                        <div class="msg-item incoming placeholder">-->
+<!--                            <span></span>-->
+<!--                            <div class="images" >-->
+<!--                                <div class="grid">-->
+<!--                                    <div class="item">-->
+<!--                                        -->
+<!--                                    </div>-->
+<!--                                    <div class="item">-->
+<!--                                        -->
+<!--                                    </div>-->
+<!--                                    <div class="item">-->
+<!--                                        -->
+<!--                                    </div>-->
+<!--                                    -->
+<!--                                </div>-->
+<!--                              </div>-->
+<!--                        </div>-->
 
-                        <!-- <div class="msg-item incoming">
-                            <span></span>
-                            <p class="msg">
-                                That sound great. i'd be happy to discuss more.
-                            </p>
-                        </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!--                        <div class="msg-item incoming">-->
+<!--                            <span></span>-->
+<!--                            <p class="msg">-->
+<!--                                That sound great. i'd be happy to discuss more.-->
+<!--                            </p>-->
+<!--                        </div>-->
 
                         <!-- <div class="msg-item incoming">
                             <span></span>
@@ -201,8 +215,15 @@
 
 
 
-                    <div class="new-msg">
-                        <span>Type a message...</span>
+                    <div class="new-msg" style="height: fit-content; border-radius: 20px">
+                        <button class="btn image">
+                            <i class="fas fa-image"></i>
+                        </button>
+
+                        <div class="msg-field">
+                            Type a message...
+                        </div>
+
                         <button class="btn send-message">
                             <i class="fas fa-chevron-right"></i>
                         </button>
