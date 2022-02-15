@@ -219,7 +219,8 @@ body{
     outline: 0;
     padding: 5px 10px;
     background:transparent;
-    color: var(--White)
+    color: var(--White);
+    transition: all ease-in-out .15s;
 }
 
 .curved-edge{
@@ -388,6 +389,206 @@ body{
 
 
 
+/*================ start images bottom sheet*/
+.images-bottom-sheet-cover{
+    position: absolute;
+    height: 100%;
+    background: rgba(0,0,0,.2);
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    opacity: 0;
+}
+
+.images-bottom-sheet-cover.show{
+    animation: bottom-sheet-cover-show .3s forwards .8s;
+}
+
+.images-bottom-sheet-cover.hide{
+    animation: bottom-sheet-cover-hide .7s forwards;
+}
+
+@keyframes bottom-sheet-cover-show{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes bottom-sheet-cover-hide{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+.images-bottom-sheet{
+    background: var(--dark-grayish-violet);
+    height: fit-content;
+    align-self: flex-end;
+    box-shadow: 0 -3px 6px rgba(0,0,0,.1);
+    width: 100%;
+    margin-bottom: -170px;
+}
+
+.images-bottom-sheet.show{
+    animation: bottom-sheet-show .3s forwards 1s;
+}
+
+.images-bottom-sheet.hide{
+    animation: bottom-sheet-hide .3s forwards;
+}
+
+@keyframes bottom-sheet-show{
+    from{
+        margin-bottom: -170px;
+    }
+
+    to{
+        margin-bottom: 0;
+    }
+}
+
+@keyframes bottom-sheet-hide{
+    from{
+        margin-bottom: 0;
+    }
+
+    to{
+        margin-bottom: -170px;
+    }
+}
+
+.images-bottom-sheet .b-sheet-header{
+    padding: 5px 10px;
+    background: var(--White);
+    border:solid rgba(0,0,0,.2) 1px;
+    border-bottom: 0;
+    color: var(--desaturated-dark-violet)
+
+}
+
+.images-bottom-sheet .b-sheet-header i{
+    margin-right: 5px;
+}
+
+.images-bottom-sheet .grid{
+    display: flex;
+    /*flex-wrap: wrap;*/
+    justify-content: space-between;
+    /*padding: 0 5px;*/
+    width: 100%;
+}
+
+.images-bottom-sheet .grid .item{
+    width: 95px;
+    height: 95px;
+    overflow: hidden;
+    border: solid var(--dark-grayish-violet) 1px;
+    position:relative;
+}
+
+.images-bottom-sheet .grid .item > img{
+    width: 100%;
+}
+
+.images-bottom-sheet .grid .item .selectable-cover,
+.images-bottom-sheet .grid .item .clickable-cover {
+    position: absolute;
+    background:rgba(0,0,0,.5);
+    height: 100%;
+    width:100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.image-clickable-cover-clicked{
+    animation: image-clickable-cover-click .7s forwards ;
+}
+
+@keyframes image-clickable-cover-click{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.images-bottom-sheet .grid .item .selectable-cover{
+    background: rgba(255,255,255,.7);
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.selectable-cover-click-selected{
+    animation: selectable-cover-click .5s forwards;
+}
+
+@keyframes selectable-cover-click {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.images-bottom-sheet .grid .item .selectable-cover img{
+    height: 20px;
+    width: 20px;
+    background: rgba(0,0,0,.5);
+    border-radius: 100%;
+    padding: 5px;
+}
+
+.images-bottom-sheet .controls{
+    height: 30px;
+    /*border: solid red 1px;*/
+    padding: 0 15px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items:center ;
+}
+
+.images-bottom-sheet .controls button{
+    border-radius: 3px;
+    background: rgba(0,0,0,0);
+}
+
+.control-clicked{
+    animation: image-controls-click .15s backwards ;
+}
+
+@keyframes image-controls-click {
+    from{
+        background: rgba(0,0,0,0);
+    }
+    to{
+        background: rgba(0,0,0,.2);
+    }
+}
+.images-bottom-sheet .controls.hover{
+    background: rgba(0,0,0,.1);
+    border-radius: 3px;
+}
+
+.images-bottom-sheet .controls button:hover{
+    background: rgba(0,0,0,.1);
+    border-radius: 3px;
+}
+
+/*================ start images bottom sheet*/
+
 
 
 .outgoing .images{
@@ -479,11 +680,8 @@ body{
     align-items: center;
     color: rgba(0,0,0,.3);
     box-shadow: 0 1px 6px rgba(0,0,0,.1);
-    
-    /* todo: review this part to simulate the msg typing */
     position:absolute;
     bottom:0;
-    /* height:200px */
 }
 
 .new-msg > button{
@@ -491,9 +689,7 @@ body{
 }
 
 .new-msg .msg-field{
-    /*border:solid red 1px;*/
     width: calc(100% - 100px);
-    /*align-self: flex-end;*/
     margin: 5px 0;
     height: 20px;
     overflow: hidden;
@@ -501,13 +697,10 @@ body{
 
 .msg-field-sentence-item{
     display: inline-block;
-    /*width: 20px;*/
-    /*border: solid red 1px;*/
     overflow: hidden;
     height: 20px;
     position: relative;
     color: rgba(0,0,0,.5);
-
 }
 
 .msg-field-sentence-item .mask{
@@ -517,7 +710,9 @@ body{
     background: rgba(255,255,255,1);
     display: block;
     top: 0;
+    border-left: solid rgba(0,0,0,.5) 1px;
 }
+
 
 .typing{
     left: 0;
@@ -530,8 +725,8 @@ body{
 }
 
 
-.send-message{
-    background-color: black;
+.btn.send-message{
+    background-color: rgba(0,0,0,1);
     height: 30px;
     width:30px;
     border-radius:100%;
@@ -539,7 +734,19 @@ body{
     align-items: center;
     justify-content: space-around;
     align-self: flex-end;
-    /*margin-bottom: 5px;*/
+}
+
+.btn.send-message.animate{
+    animation: btn-send-msg-click .25s backwards 2s;
+}
+
+@keyframes btn-send-msg-click{
+    from{
+        background-color: rgba(0,0,0,1);
+    }
+    to{
+        background-color: rgba(0,0,0,.3);
+    }
 }
 
 .btn.image{
@@ -551,7 +758,21 @@ body{
     align-items: center;
     justify-content: space-around;
     align-self: flex-end;
-    /*margin-bottom: 5px;*/
+}
+
+.btn.image.animate{
+    animation: image-selector-click .25s backwards;
+}
+
+@keyframes image-selector-click{
+    from{
+        background-color: rgba(0,0,0,.2);
+
+    }
+    to{
+        background-color: rgba(0,0,0,.4);
+
+    }
 }
 
 .foreground-scene::-webkit-scrollbar {

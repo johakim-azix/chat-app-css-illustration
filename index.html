@@ -20,8 +20,8 @@
         <div class="container">
             <div class="phone-mock-up">
                 <div class="mkcontainer">
-                    <div style="position: relative;">
-                        <div class="curved-edge"></div>
+                    <div class="curved-edge" style="z-index: 10"></div>
+                    <div style="">
                         <div class="header">
                             <button class="btn" disabled style="margin-left: 10px;">
                                 <i class="fas fa-chevron-left"></i>
@@ -158,65 +158,65 @@
 
 
 
-                        <!-- <div class="msg-item outgoing">
-                            <span></span>
-                            <div class="images" >
-                                <div class="grid">
-                                    <div class="item">
-                                        <img src="images/dog-image-1.jpg" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="images/dog-image-2.jpg" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="images/dog-image-3.jpg" alt="">
-                                    </div>
-                                </div>
-                              </div>
-                        </div>
+<!--                        <div class="msg-item outgoing">-->
+<!--                            <span></span>-->
+<!--                            <div class="images" >-->
+<!--                                <div class="grid">-->
+<!--                                    <div class="item">-->
+<!--                                        <img src="images/dog-image-1.jpg" alt="">-->
+<!--                                    </div>-->
+<!--                                    <div class="item">-->
+<!--                                        <img src="images/dog-image-2.jpg" alt="">-->
+<!--                                    </div>-->
+<!--                                    <div class="item">-->
+<!--                                        <img src="images/dog-image-3.jpg" alt="">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                              </div>-->
+<!--                        </div>-->
 
-                        <div class="msg-item outgoing">
-                            <span></span>
-                            <p class="msg">
-                                Here are few pictures. She'is a happy girl.
-                            </p>
-                        </div>
+<!--                        <div class="msg-item outgoing">-->
+<!--                            <span></span>-->
+<!--                            <p class="msg">-->
+<!--                                Here are few pictures. She'is a happy girl.-->
+<!--                            </p>-->
+<!--                        </div>-->
 
-                        <div class="msg-item outgoing">
-                            <span></span>
-                            <p class="msg">
-                                Can you make it?
-                            </p>
-                        </div>
+<!--                        <div class="msg-item outgoing">-->
+<!--                            <span></span>-->
+<!--                            <p class="msg">-->
+<!--                                Can you make it?-->
+<!--                            </p>-->
+<!--                        </div>-->
 
-                        <div class="msg-item incoming">
-                            <span></span>
-                            <p class="msg">
-                                She looks so happy, the time we discussed works.How long should i take her out for?
-                            </p>
-                        </div>
+<!--                        <div class="msg-item incoming">-->
+<!--                            <span></span>-->
+<!--                            <p class="msg">-->
+<!--                                She looks so happy, the time we discussed works.How long should i take her out for?-->
+<!--                            </p>-->
+<!--                        </div>-->
 
-                        <div class="msg-item incoming ">
-                            <div class="pricing-item">
-                                <div class="radio"></div>
-                                <small>30 minute walk</small>
-                                <strong>$29</strong>
-                            </div>
-                        </div>
+<!--                        <div class="msg-item incoming ">-->
+<!--                            <div class="pricing-item">-->
+<!--                                <div class="radio"></div>-->
+<!--                                <small>30 minute walk</small>-->
+<!--                                <strong>$29</strong>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
-                        <div class="msg-item incoming">
-                            <div class="pricing-item">
-                                <div class="radio"></div>
-                                <small>45 minute walk</small>
-                                <strong>$49</strong>
-                            </div>
-                        </div> -->
+<!--                        <div class="msg-item incoming">-->
+<!--                            <div class="pricing-item">-->
+<!--                                <div class="radio"></div>-->
+<!--                                <small>45 minute walk</small>-->
+<!--                                <strong>$49</strong>-->
+<!--                            </div>-->
+<!--                        </div> -->
                     </div>
 
 
 
                     <div class="new-msg" style="height: fit-content; border-radius: 20px">
-                        <button class="btn image">
+                        <button id="image-selector" class="btn image">
                             <i class="fas fa-image"></i>
                         </button>
 
@@ -224,9 +224,47 @@
                             Type a message...
                         </div>
 
-                        <button class="btn send-message">
+                        <button id="send-msg" class="btn send-message">
                             <i class="fas fa-chevron-right"></i>
                         </button>
+                    </div>
+
+                    <div class="images-bottom-sheet-cover">
+                        <div class="images-bottom-sheet">
+                            <div class="b-sheet-header">
+                                <i class="fa fa-images"></i>
+                                <span>Galerie</span>
+                            </div>
+                            <div class="grid">
+                                <div class="item">
+                                    <img src="images/dog-image-1.jpg" alt="">
+                                    <div class="clickable-cover "></div>
+                                    <div class="selectable-cover ">
+                                        <img src="/images/icon-check.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="images/dog-image-2.jpg" alt="">
+                                    <div class="clickable-cover"></div>
+                                    <div class="selectable-cover">
+                                        <img src="/images/icon-check.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="images/dog-image-3.jpg" alt="">
+                                    <div class="clickable-cover" ></div>
+                                    <div class="selectable-cover">
+                                        <img src="/images/icon-check.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="controls" style="">
+                                <button class="btn">Cancel</button>
+                                <button id="btn-send-images" class="btn">Send</button>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
